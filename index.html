@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Search App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🎬 Movie Search</h1>
+        
+        <!-- Search Section -->
+        <div class="search-container">
+            <div class="search-input-container">
+                <input type="text" id="searchInput" placeholder="Enter movie title..." autocomplete="off">
+                <div id="suggestionsContainer" class="suggestions-container"></div>
+            </div>
+            <button id="searchButton">Search</button>
+        </div>
+        
+        <!-- User Controls -->
+        <div class="user-controls">
+            <button id="favoritesButton" class="control-button">
+                <span class="heart-icon">❤️</span> Favorites (<span id="favoritesCount">0</span>)
+            </button>
+            <button id="historyButton" class="control-button">History</button>
+            <button id="darkModeToggle" class="control-button">🌓 Dark Mode</button>
+        </div>
+        
+        <!-- Results Navigation -->
+        <div class="results-navigation">
+            <div class="results-info">
+                <span id="resultsCount">0</span> movies found
+            </div>
+        </div>
+        
+        <div id="movieResults" class="results-container">
+            <div class="welcome-message">
+                <h2>🎬 Movie Search</h2>
+                <p>Enter a movie title above to begin your search.</p>
+                <p>Discover detailed information about your favorite films.</p>
+                <div class="featured-searches">
+                    <h3>Try searching for:</h3>
+                    <button class="featured-search-btn" onclick="searchFeatured('The Matrix')">The Matrix</button>
+                    <button class="featured-search-btn" onclick="searchFeatured('Inception')">Inception</button>
+                    <button class="featured-search-btn" onclick="searchFeatured('Pulp Fiction')">Pulp Fiction</button>
+                    <button class="featured-search-btn" onclick="searchFeatured('The Godfather')">The Godfather</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Movie Detail Modal -->
+    <div id="movieModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <div id="modalBody"></div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

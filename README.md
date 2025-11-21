@@ -24,3 +24,9 @@ A responsive web application that allows users to search for movies using the TM
 - JavaScript (ES6+)
 - TMDB API
 - LocalStorage for data persistence
+
+## Security Note
+The TMDB API key is embedded in the JavaScript code for demonstration purposes. For production use, it's recommended to:
+1. Get your own API key from [TMDB](https://www.themoviedb.org/settings/api)
+2. Replace the existing API key in `script.js`
+3. Consider implementing a backend proxy to protect the API key in production environments

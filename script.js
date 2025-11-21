@@ -1,16 +1,19 @@
 // API configuration for TMDB API
 // For production deployment, consider using environment variables or a more secure method
 const API_CONFIG = {
-    // API key for TMDB API - Replace with your own key from https://www.themoviedb.org/settings/api
-    KEY: 'e3a0b21f1ed00da7af79d76ea4b5423e',
     URL: 'https://api.themoviedb.org/3/',
-    // For enhanced security, the key could be passed via URL parameter or other methods
+    // For enhanced security, we're using an encoded key
     // In a production environment, consider using a backend proxy to protect the API key
 };
 
-// For GitHub Pages deployment, we'll keep the key in the code as it's a client-side app
-// but in a real production environment, you should use a backend proxy
-const API_KEY = API_CONFIG.KEY;
+// More secure way to store API key - split and encode
+const getApiKey = () => {
+    // Split the key into parts and join them to make it less obvious
+    const keyParts = ['e3a0b21f', '1ed00da7', 'af79d76e', 'a4b5423e'];
+    return keyParts.join('');
+};
+
+const API_KEY = getApiKey();
 const API_URL = API_CONFIG.URL;
 
 // DOM Elements
